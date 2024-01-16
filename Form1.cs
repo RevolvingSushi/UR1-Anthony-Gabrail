@@ -4,7 +4,7 @@ namespace UR1_Anthony_Gabrail
     {
         public Form1()
         {
-            //Test 1
+            
             InitializeComponent();
         }
 
