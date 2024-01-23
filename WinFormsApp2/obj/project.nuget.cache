@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JMQZ5ZmQpta3ET2FX54dRAhpYbyQar5MV8rTUY5ns5zRMbuEDIXVFbew7XpVi/oUpFQKkDIxGved95x65IHHvg==",
+  "dgSpecHash": "z20tNjJx0NwsOvWnUO2AHfklwCyI2SryQBduyct0EGAnRNkiRPpeTZDrGbRIhXqHzgsKwQ06m4L/uzbYayhLkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\agabrail\\source\\UR1Codes\\WinFormsApp2\\WinFormsApp2.csproj",
+  "projectFilePath": "C:\\Users\\agabrail\\source\\UR1Codes\\UR1-Anthony-Gabrail\\WinFormsApp2\\WinFormsApp2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\agabrail\\.nuget\\packages\\emgu.cv\\4.8.1.5350\\emgu.cv.4.8.1.5350.nupkg.sha512",
     "C:\\Users\\agabrail\\.nuget\\packages\\emgu.cv.bitmap\\4.8.1.5350\\emgu.cv.bitmap.4.8.1.5350.nupkg.sha512",

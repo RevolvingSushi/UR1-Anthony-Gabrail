@@ -1888,11 +1888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\agabrail\\source\\UR1Codes\\WinFormsApp2\\WinFormsApp2.csproj",
+      "projectUniqueName": "C:\\Users\\agabrail\\source\\UR1Codes\\UR1-Anthony-Gabrail\\WinFormsApp2\\WinFormsApp2.csproj",
       "projectName": "WinFormsApp2",
-      "projectPath": "C:\\Users\\agabrail\\source\\UR1Codes\\WinFormsApp2\\WinFormsApp2.csproj",
+      "projectPath": "C:\\Users\\agabrail\\source\\UR1Codes\\UR1-Anthony-Gabrail\\WinFormsApp2\\WinFormsApp2.csproj",
       "packagesPath": "C:\\Users\\agabrail\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\agabrail\\source\\UR1Codes\\WinFormsApp2\\obj\\",
+      "outputPath": "C:\\Users\\agabrail\\source\\UR1Codes\\UR1-Anthony-Gabrail\\WinFormsApp2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\agabrail\\AppData\\Roaming\\NuGet\\NuGet.Config",
