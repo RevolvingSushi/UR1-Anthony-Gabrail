@@ -6,11 +6,11 @@ namespace WinFormsApp2
 {
     public partial class Form1 : Form
     {
-      
+
 
         VideoCapture mCapture;
 
-       Thread mCaptureThread;
+        Thread mCaptureThread;
 
         CancellationTokenSource mCancellationToken = new();
 
@@ -28,7 +28,7 @@ namespace WinFormsApp2
 
 
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load_1(object sender, EventArgs e)
         {
             try
             {
@@ -42,9 +42,6 @@ namespace WinFormsApp2
                 MessageBox.Show(ex.Message);
 
             }
-
-
-
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -122,15 +119,7 @@ namespace WinFormsApp2
             }
         }
 
-
-
-
-
-
-
-
-
-        }
+    }
 
 
 
