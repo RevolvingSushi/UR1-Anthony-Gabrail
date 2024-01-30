@@ -1,6 +1,6 @@
 
 using Emgu.CV;
-
+using Emgu.CV.CvEnum;
 
 namespace WinFormsApp2
 {
@@ -16,7 +16,7 @@ namespace WinFormsApp2
 
         bool mIsCapturing = false;
 
-       
+
 
         public Form1()
         {
@@ -114,8 +114,8 @@ namespace WinFormsApp2
                 Task.Delay(16);
 
                 VideoPictureBox.Image = frame.ToBitmap(); //Display current frame
-
-
+                CvInvoke.CvtColor(frame, frame, ColorConversion.Bgr2Gray);
+                VideoPictureBox2.Image = frame.ToBitmap();
 
             }
         }
