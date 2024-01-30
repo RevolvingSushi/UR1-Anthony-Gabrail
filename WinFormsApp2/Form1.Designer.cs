@@ -50,6 +50,7 @@
             VideoPictureBox.Size = new Size(690, 464);
             VideoPictureBox.TabIndex = 1;
             VideoPictureBox.TabStop = false;
+            VideoPictureBox.Click += VideoPictureBox_Click;
             // 
             // Form1
             // 

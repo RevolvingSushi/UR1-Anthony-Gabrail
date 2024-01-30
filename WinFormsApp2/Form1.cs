@@ -16,6 +16,7 @@ namespace WinFormsApp2
 
         bool mIsCapturing = false;
 
+       
 
         public Form1()
         {
@@ -119,6 +120,10 @@ namespace WinFormsApp2
             }
         }
 
+        private void VideoPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
