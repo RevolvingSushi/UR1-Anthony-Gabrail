@@ -1,6 +1,7 @@
 
 using Emgu.CV;
 using Emgu.CV.CvEnum;
+using System.Net.Security;
 
 namespace WinFormsApp2
 {
@@ -97,6 +98,8 @@ namespace WinFormsApp2
 
         }
 
+        float min = 1;
+        float max = 1;
         private void DisplayWebcam(CancellationToken token)
         {
             while (!token.IsCancellationRequested)//White no requested cancellation
@@ -115,12 +118,45 @@ namespace WinFormsApp2
 
                 VideoPictureBox.Image = frame.ToBitmap(); //Display current frame
                 CvInvoke.CvtColor(frame, frame, ColorConversion.Bgr2Gray);
+                CvInvoke.Threshold(frame, frame, min, max, Emgu.CV.CvEnum.ThresholdType.Binary);
+
+
                 VideoPictureBox2.Image = frame.ToBitmap();
+
+                int whitePixels = CvInvoke.CountNonZero(frame);
+                Invoke(new Action(() =>
+                {
+                    if (trackBar1.Value > trackBar2.Value)
+                    {
+                        trackBar2.Value = trackBar1.Value;
+
+                    }
+
+                    if (trackBar2.Value < trackBar1.Value)
+                    {
+                        trackBar1.Value = trackBar2.Value;
+
+                    }
+
+                    min = trackBar1.Value;
+                    max = trackBar2.Value;
+
+                }
+
+
+                ));
+
+
 
             }
         }
 
         private void VideoPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
         {
 
         }
