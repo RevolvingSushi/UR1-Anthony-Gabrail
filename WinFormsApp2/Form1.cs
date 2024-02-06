@@ -117,34 +117,48 @@ namespace WinFormsApp2
                 Task.Delay(16);
 
                 VideoPictureBox.Image = frame.ToBitmap(); //Display current frame
+
+                Mat CopyFrame = frame.Clone();
+
                 CvInvoke.CvtColor(frame, frame, ColorConversion.Bgr2Gray);
+
+
+
                 CvInvoke.Threshold(frame, frame, min, max, Emgu.CV.CvEnum.ThresholdType.Binary);
 
 
                 VideoPictureBox2.Image = frame.ToBitmap();
 
                 int whitePixels = CvInvoke.CountNonZero(frame);
-                Invoke(new Action(() =>
+
+                if (checkBox1.Checked == true)
                 {
-                    if (trackBar1.Value > trackBar2.Value)
+                    if (whitePixels < 10000)
                     {
-                        trackBar2.Value = trackBar1.Value;
+                        min -= 1;
+                    } else
+                    {
+                        if (whitePixels > 12000)
+                        {
+                            min += 1;
+
+                        }
+
 
                     }
-
-                    if (trackBar2.Value < trackBar1.Value)
-                    {
-                        trackBar1.Value = trackBar2.Value;
-
-                    }
-
-                    min = trackBar1.Value;
-                    max = trackBar2.Value;
 
                 }
 
+                CvInvoke.Threshold(CopyFrame, CopyFrame, min, max, Emgu.CV.CvEnum.ThresholdType.Binary);
+                VideoPictureBox3.Image = CopyFrame.ToBitmap();
 
-                ));
+                Invoke(new Action(() =>
+                {
+                    WhitePixelBox.Text = whitePixels.ToString();
+                }));
+
+
+
 
 
 
@@ -158,6 +172,65 @@ namespace WinFormsApp2
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
+
+            if (trackBar1.Value > trackBar2.Value)
+            {
+                trackBar2.Value = trackBar1.Value;
+
+            }
+
+
+            min = trackBar1.Value;
+            max = trackBar2.Value;
+
+
+
+
+
+
+        }
+
+        private void VideoPictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+
+
+            if (trackBar2.Value < trackBar1.Value)
+            {
+                trackBar1.Value = trackBar2.Value;
+
+            }
+
+            min = trackBar1.Value;
+            max = trackBar2.Value;
+
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true)
+            {
+
+
+
+
+
+
+            }
+            else
+            {
+
+
+
+
+            }
+
+
 
         }
     }
