@@ -113,7 +113,16 @@ namespace WinFormsApp2
 
         int Sections = 5;
 
+        int hMin = 0;
+        int hMax = 255;
 
+        //sat Variables
+        int sMin = 0;
+        int sMax = 255;
+
+        //val Variables
+        int vMin = 0;
+        int vMax = 255;
 
 
 
@@ -130,16 +139,7 @@ namespace WinFormsApp2
                 CvInvoke.Resize(frame, frame, newSize);
 
                 //Hue Variables
-                int hMin = 0;
-                int hMax = 179;
 
-                //sat Variables
-                int sMin = 0;
-                int sMax = 255;
-
-                //val Variables
-                int vMin = 0;
-                int vMax = 255;
                 Invoke(new Action(() =>
                 {
 
@@ -175,20 +175,25 @@ namespace WinFormsApp2
                 //Split HSV into array of mats
                 Mat[] hsvChannels = HsvFrame.Split();
 
+                Size hsvSize = new Size(hPictureBox.Width, hPictureBox.Height);
+
 
                 //Filter for Hue
                 Mat hueFilter = new Mat();
                 CvInvoke.InRange(hsvChannels[0], new ScalarArray(hMin), new ScalarArray(hMax), hueFilter);
+                CvInvoke.Resize(hueFilter, hueFilter, hsvSize);
                 Invoke(new Action(() => { hPictureBox.Image = hueFilter.ToBitmap(); }));
 
                 //Filter for Saturation
                 Mat satFilter = new Mat();
                 CvInvoke.InRange(hsvChannels[0], new ScalarArray(sMin), new ScalarArray(sMax), satFilter);
+                CvInvoke.Resize(satFilter, satFilter, hsvSize);
                 Invoke(new Action(() => { sPictureBox.Image = satFilter.ToBitmap(); }));
 
                 //Filter for Value
                 Mat valFilter = new Mat();
                 CvInvoke.InRange(hsvChannels[0], new ScalarArray(vMin), new ScalarArray(vMax), valFilter);
+                CvInvoke.Resize(valFilter, valFilter, hsvSize);
                 Invoke(new Action(() => { vPictureBox.Image = valFilter.ToBitmap(); }));
 
 
@@ -196,7 +201,7 @@ namespace WinFormsApp2
                 Mat mergedImage = new Mat();
                 CvInvoke.BitwiseAnd(hueFilter, satFilter, mergedImage);
                 CvInvoke.BitwiseAnd(mergedImage, valFilter, mergedImage);
-
+                CvInvoke.Resize(mergedImage, mergedImage, newSize);
                 //CvInvoke.Threshold(mergedImage, mergedImage, min, max, Emgu.CV.CvEnum.ThresholdType.Binary);
 
                 //VideoPictureBox2.Image = frame.ToBitmap();

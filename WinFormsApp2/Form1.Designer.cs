@@ -281,16 +281,16 @@
             // hMaxBar
             // 
             hMaxBar.Location = new Point(728, 1567);
-            hMaxBar.Maximum = 179;
+            hMaxBar.Maximum = 255;
             hMaxBar.Name = "hMaxBar";
             hMaxBar.Size = new Size(200, 114);
             hMaxBar.TabIndex = 22;
-            hMaxBar.Value = 179;
+            hMaxBar.Value = 255;
             // 
             // hMinBar
             // 
             hMinBar.Location = new Point(728, 1447);
-            hMinBar.Maximum = 179;
+            hMinBar.Maximum = 255;
             hMinBar.Name = "hMinBar";
             hMinBar.Size = new Size(200, 114);
             hMinBar.TabIndex = 21;
