@@ -30,7 +30,7 @@
         {
             StartStopBtn = new Button();
             VideoPictureBox = new PictureBox();
-            VideoPictureBox2 = new PictureBox();
+            VideoPictureBox3 = new PictureBox();
             ThresholdBarMin = new TrackBar();
             WhitePixelBox = new TextBox();
             ThresholdBarMax = new TrackBar();
@@ -68,8 +68,15 @@
             label16 = new Label();
             vMaxBar = new TrackBar();
             vMinBar = new TrackBar();
+            VideoPictureBox2 = new PictureBox();
+            HueMinBox = new TextBox();
+            HueMaxBox = new TextBox();
+            SatMaxBox = new TextBox();
+            SatMinBox = new TextBox();
+            ValMaxBox = new TextBox();
+            ValMinBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)VideoPictureBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)VideoPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)VideoPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ThresholdBarMin).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ThresholdBarMax).BeginInit();
             ((System.ComponentModel.ISupportInitialize)hMaxBar).BeginInit();
@@ -81,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)vPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vMaxBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vMinBar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)VideoPictureBox2).BeginInit();
             SuspendLayout();
             // 
             // StartStopBtn
@@ -96,22 +104,22 @@
             // VideoPictureBox
             // 
             VideoPictureBox.BackColor = SystemColors.ControlLight;
-            VideoPictureBox.Location = new Point(211, 220);
+            VideoPictureBox.Location = new Point(98, 93);
             VideoPictureBox.Name = "VideoPictureBox";
-            VideoPictureBox.Size = new Size(900, 600);
+            VideoPictureBox.Size = new Size(600, 400);
             VideoPictureBox.TabIndex = 1;
             VideoPictureBox.TabStop = false;
             VideoPictureBox.Click += VideoPictureBox_Click;
             // 
-            // VideoPictureBox2
+            // VideoPictureBox3
             // 
-            VideoPictureBox2.BackColor = SystemColors.ControlDark;
-            VideoPictureBox2.Location = new Point(1199, 220);
-            VideoPictureBox2.Name = "VideoPictureBox2";
-            VideoPictureBox2.Size = new Size(900, 600);
-            VideoPictureBox2.TabIndex = 2;
-            VideoPictureBox2.TabStop = false;
-            VideoPictureBox2.Click += VideoPictureBox2_Click;
+            VideoPictureBox3.BackColor = SystemColors.ControlDark;
+            VideoPictureBox3.Location = new Point(1747, 93);
+            VideoPictureBox3.Name = "VideoPictureBox3";
+            VideoPictureBox3.Size = new Size(600, 400);
+            VideoPictureBox3.TabIndex = 2;
+            VideoPictureBox3.TabStop = false;
+            VideoPictureBox3.Click += VideoPictureBox2_Click;
             // 
             // ThresholdBarMin
             // 
@@ -163,35 +171,35 @@
             // 
             // Split1
             // 
-            Split1.Location = new Point(1147, 888);
+            Split1.Location = new Point(1464, 579);
             Split1.Name = "Split1";
             Split1.Size = new Size(180, 47);
             Split1.TabIndex = 9;
             // 
             // Split2
             // 
-            Split2.Location = new Point(1353, 888);
+            Split2.Location = new Point(1670, 579);
             Split2.Name = "Split2";
             Split2.Size = new Size(180, 47);
             Split2.TabIndex = 10;
             // 
             // Split3
             // 
-            Split3.Location = new Point(1561, 888);
+            Split3.Location = new Point(1878, 579);
             Split3.Name = "Split3";
             Split3.Size = new Size(180, 47);
             Split3.TabIndex = 11;
             // 
             // Split4
             // 
-            Split4.Location = new Point(1766, 888);
+            Split4.Location = new Point(2083, 579);
             Split4.Name = "Split4";
             Split4.Size = new Size(180, 47);
             Split4.TabIndex = 12;
             // 
             // Split5
             // 
-            Split5.Location = new Point(1967, 888);
+            Split5.Location = new Point(2284, 579);
             Split5.Name = "Split5";
             Split5.Size = new Size(180, 47);
             Split5.TabIndex = 13;
@@ -199,7 +207,7 @@
             // LMLabel
             // 
             LMLabel.AutoSize = true;
-            LMLabel.Location = new Point(1162, 842);
+            LMLabel.Location = new Point(1479, 533);
             LMLabel.Name = "LMLabel";
             LMLabel.Size = new Size(143, 41);
             LMLabel.TabIndex = 14;
@@ -208,7 +216,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(1353, 842);
+            label1.Location = new Point(1670, 533);
             label1.Name = "label1";
             label1.Size = new Size(168, 41);
             label1.TabIndex = 15;
@@ -217,7 +225,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(1593, 842);
+            label2.Location = new Point(1910, 533);
             label2.Name = "label2";
             label2.Size = new Size(111, 41);
             label2.TabIndex = 16;
@@ -227,7 +235,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(1757, 842);
+            label3.Location = new Point(2074, 533);
             label3.Name = "label3";
             label3.Size = new Size(189, 41);
             label3.TabIndex = 17;
@@ -236,7 +244,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(1983, 842);
+            label4.Location = new Point(2300, 533);
             label4.Name = "label4";
             label4.Size = new Size(164, 41);
             label4.TabIndex = 18;
@@ -263,7 +271,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(607, 1447);
+            label7.Location = new Point(550, 1447);
             label7.Name = "label7";
             label7.Size = new Size(69, 41);
             label7.TabIndex = 24;
@@ -272,7 +280,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(602, 1567);
+            label8.Location = new Point(545, 1567);
             label8.Name = "label8";
             label8.Size = new Size(74, 41);
             label8.TabIndex = 23;
@@ -280,20 +288,22 @@
             // 
             // hMaxBar
             // 
-            hMaxBar.Location = new Point(728, 1567);
-            hMaxBar.Maximum = 255;
+            hMaxBar.Location = new Point(671, 1567);
+            hMaxBar.Maximum = 179;
             hMaxBar.Name = "hMaxBar";
             hMaxBar.Size = new Size(200, 114);
             hMaxBar.TabIndex = 22;
-            hMaxBar.Value = 255;
+            hMaxBar.Value = 179;
+            hMaxBar.Scroll += hMaxBar_Scroll;
             // 
             // hMinBar
             // 
-            hMinBar.Location = new Point(728, 1447);
-            hMinBar.Maximum = 255;
+            hMinBar.Location = new Point(671, 1447);
+            hMinBar.Maximum = 179;
             hMinBar.Name = "hMinBar";
             hMinBar.Size = new Size(200, 114);
             hMinBar.TabIndex = 21;
+            hMinBar.Scroll += hMinBar_Scroll;
             // 
             // label9
             // 
@@ -359,7 +369,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(1089, 1447);
+            label12.Location = new Point(1042, 1447);
             label12.Name = "label12";
             label12.Size = new Size(69, 41);
             label12.TabIndex = 32;
@@ -368,7 +378,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(1084, 1567);
+            label13.Location = new Point(1037, 1567);
             label13.Name = "label13";
             label13.Size = new Size(74, 41);
             label13.TabIndex = 31;
@@ -376,21 +386,23 @@
             // 
             // sMaxBar
             // 
-            sMaxBar.Location = new Point(1210, 1567);
+            sMaxBar.Location = new Point(1163, 1567);
             sMaxBar.Maximum = 255;
             sMaxBar.Name = "sMaxBar";
             sMaxBar.Size = new Size(200, 114);
             sMaxBar.TabIndex = 30;
             sMaxBar.Value = 255;
+            sMaxBar.Scroll += sMaxBar_Scroll;
             // 
             // sMinBar
             // 
-            sMinBar.Location = new Point(1210, 1447);
+            sMinBar.Location = new Point(1163, 1447);
             sMinBar.Maximum = 255;
             sMinBar.Name = "sMinBar";
             sMinBar.Size = new Size(200, 114);
             sMinBar.TabIndex = 29;
             sMinBar.Value = 150;
+            sMinBar.Scroll += sMinBar_Scroll;
             // 
             // label14
             // 
@@ -413,7 +425,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(1578, 1447);
+            label15.Location = new Point(1517, 1447);
             label15.Name = "label15";
             label15.Size = new Size(69, 41);
             label15.TabIndex = 38;
@@ -422,7 +434,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(1573, 1567);
+            label16.Location = new Point(1512, 1567);
             label16.Name = "label16";
             label16.Size = new Size(74, 41);
             label16.TabIndex = 37;
@@ -430,26 +442,86 @@
             // 
             // vMaxBar
             // 
-            vMaxBar.Location = new Point(1699, 1567);
+            vMaxBar.Location = new Point(1638, 1567);
             vMaxBar.Maximum = 255;
             vMaxBar.Name = "vMaxBar";
             vMaxBar.Size = new Size(200, 114);
             vMaxBar.TabIndex = 36;
             vMaxBar.Value = 255;
+            vMaxBar.Scroll += vMaxBar_Scroll;
             // 
             // vMinBar
             // 
-            vMinBar.Location = new Point(1699, 1447);
+            vMinBar.Location = new Point(1638, 1447);
             vMinBar.Maximum = 255;
             vMinBar.Name = "vMinBar";
             vMinBar.Size = new Size(200, 114);
             vMinBar.TabIndex = 35;
+            vMinBar.Scroll += vMinBar_Scroll;
+            // 
+            // VideoPictureBox2
+            // 
+            VideoPictureBox2.BackColor = SystemColors.ControlDark;
+            VideoPictureBox2.Location = new Point(933, 93);
+            VideoPictureBox2.Name = "VideoPictureBox2";
+            VideoPictureBox2.Size = new Size(600, 400);
+            VideoPictureBox2.TabIndex = 41;
+            VideoPictureBox2.TabStop = false;
+            // 
+            // HueMinBox
+            // 
+            HueMinBox.Location = new Point(877, 1447);
+            HueMinBox.Name = "HueMinBox";
+            HueMinBox.Size = new Size(119, 47);
+            HueMinBox.TabIndex = 42;
+            // 
+            // HueMaxBox
+            // 
+            HueMaxBox.Location = new Point(877, 1564);
+            HueMaxBox.Name = "HueMaxBox";
+            HueMaxBox.Size = new Size(119, 47);
+            HueMaxBox.TabIndex = 43;
+            // 
+            // SatMaxBox
+            // 
+            SatMaxBox.Location = new Point(1369, 1567);
+            SatMaxBox.Name = "SatMaxBox";
+            SatMaxBox.Size = new Size(119, 47);
+            SatMaxBox.TabIndex = 45;
+            // 
+            // SatMinBox
+            // 
+            SatMinBox.Location = new Point(1369, 1450);
+            SatMinBox.Name = "SatMinBox";
+            SatMinBox.Size = new Size(119, 47);
+            SatMinBox.TabIndex = 44;
+            // 
+            // ValMaxBox
+            // 
+            ValMaxBox.Location = new Point(1844, 1567);
+            ValMaxBox.Name = "ValMaxBox";
+            ValMaxBox.Size = new Size(119, 47);
+            ValMaxBox.TabIndex = 47;
+            // 
+            // ValMinBox
+            // 
+            ValMinBox.Location = new Point(1844, 1450);
+            ValMinBox.Name = "ValMinBox";
+            ValMinBox.Size = new Size(119, 47);
+            ValMinBox.TabIndex = 46;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2500, 1717);
+            Controls.Add(ValMaxBox);
+            Controls.Add(ValMinBox);
+            Controls.Add(SatMaxBox);
+            Controls.Add(SatMinBox);
+            Controls.Add(HueMaxBox);
+            Controls.Add(HueMinBox);
+            Controls.Add(VideoPictureBox2);
             Controls.Add(label14);
             Controls.Add(vPictureBox);
             Controls.Add(label15);
@@ -487,14 +559,14 @@
             Controls.Add(ThresholdBarMax);
             Controls.Add(WhitePixelBox);
             Controls.Add(ThresholdBarMin);
-            Controls.Add(VideoPictureBox2);
+            Controls.Add(VideoPictureBox3);
             Controls.Add(VideoPictureBox);
             Controls.Add(StartStopBtn);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load_1;
             ((System.ComponentModel.ISupportInitialize)VideoPictureBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)VideoPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)VideoPictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)ThresholdBarMin).EndInit();
             ((System.ComponentModel.ISupportInitialize)ThresholdBarMax).EndInit();
             ((System.ComponentModel.ISupportInitialize)hMaxBar).EndInit();
@@ -506,6 +578,7 @@
             ((System.ComponentModel.ISupportInitialize)vPictureBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)vMaxBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)vMinBar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)VideoPictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -514,7 +587,7 @@
 
         private Button StartStopBtn;
         private PictureBox VideoPictureBox;
-        private PictureBox VideoPictureBox2;
+        private PictureBox VideoPictureBox3;
         private TrackBar ThresholdBarMin;
         private TextBox WhitePixelBox;
         private TrackBar ThresholdBarMax;
@@ -552,5 +625,12 @@
         private Label label16;
         private TrackBar vMaxBar;
         private TrackBar vMinBar;
+        private PictureBox VideoPictureBox2;
+        private TextBox HueMinBox;
+        private TextBox HueMaxBox;
+        private TextBox SatMaxBox;
+        private TextBox SatMinBox;
+        private TextBox ValMaxBox;
+        private TextBox ValMinBox;
     }
 }

@@ -113,16 +113,16 @@ namespace WinFormsApp2
 
         int Sections = 5;
 
-        int hMin = 0;
-        int hMax = 255;
+        double hMin = 0;
+        double hMax = 179;
 
         //sat Variables
-        int sMin = 0;
-        int sMax = 255;
+        double sMin = 0;
+        double sMax = 150;
 
         //val Variables
-        int vMin = 0;
-        int vMax = 255;
+        double vMin = 0;
+        double vMax = 150;
 
 
 
@@ -140,21 +140,27 @@ namespace WinFormsApp2
 
                 //Hue Variables
 
+                
                 Invoke(new Action(() =>
                 {
-
+                    /*
                     hMin = hMinBar.Value;
                     hMax = hMaxBar.Value;
                     sMin = sMinBar.Value;
                     sMax = sMaxBar.Value;
                     vMin = vMinBar.Value;
                     vMax = vMaxBar.Value;
+                    */
 
-
-
+                    HueMinBox.Text = hMin.ToString();
+                    HueMaxBox.Text = hMax.ToString();
+                    SatMinBox.Text = sMin.ToString();
+                    SatMaxBox.Text = sMax.ToString();
+                    ValMinBox.Text = vMin.ToString();
+                    ValMaxBox.Text = vMax.ToString();
 
                 }));
-
+               
 
 
                 //~60fps -> 1000ms/60 = 16.6
@@ -171,9 +177,10 @@ namespace WinFormsApp2
                 //CvInvoke.Threshold(frame, frame, min, max, Emgu.CV.CvEnum.ThresholdType.Binary);
 
                 //Conversion to HSV
-                CvInvoke.CvtColor(frame, HsvFrame, ColorConversion.Bgr2Gray);
+                //CvInvoke.CvtColor(frame, HsvFrame, ColorConversion.Bgr2Gray);
                 //Split HSV into array of mats
                 Mat[] hsvChannels = HsvFrame.Split();
+                Mat GrayFrame = frame.Clone();
 
                 Size hsvSize = new Size(hPictureBox.Width, hPictureBox.Height);
 
@@ -186,13 +193,13 @@ namespace WinFormsApp2
 
                 //Filter for Saturation
                 Mat satFilter = new Mat();
-                CvInvoke.InRange(hsvChannels[0], new ScalarArray(sMin), new ScalarArray(sMax), satFilter);
+                CvInvoke.InRange(hsvChannels[1], new ScalarArray(sMin), new ScalarArray(sMax), satFilter);
                 CvInvoke.Resize(satFilter, satFilter, hsvSize);
                 Invoke(new Action(() => { sPictureBox.Image = satFilter.ToBitmap(); }));
 
                 //Filter for Value
                 Mat valFilter = new Mat();
-                CvInvoke.InRange(hsvChannels[0], new ScalarArray(vMin), new ScalarArray(vMax), valFilter);
+                CvInvoke.InRange(hsvChannels[2], new ScalarArray(vMin), new ScalarArray(vMax), valFilter);
                 CvInvoke.Resize(valFilter, valFilter, hsvSize);
                 Invoke(new Action(() => { vPictureBox.Image = valFilter.ToBitmap(); }));
 
@@ -202,9 +209,14 @@ namespace WinFormsApp2
                 CvInvoke.BitwiseAnd(hueFilter, satFilter, mergedImage);
                 CvInvoke.BitwiseAnd(mergedImage, valFilter, mergedImage);
                 CvInvoke.Resize(mergedImage, mergedImage, newSize);
-                //CvInvoke.Threshold(mergedImage, mergedImage, min, max, Emgu.CV.CvEnum.ThresholdType.Binary);
 
-                //VideoPictureBox2.Image = frame.ToBitmap();
+                CvInvoke.CvtColor(GrayFrame, GrayFrame, Emgu.CV.CvEnum.ColorConversion.Bgr2Gray);
+                CvInvoke.Threshold(GrayFrame, GrayFrame, min, max, Emgu.CV.CvEnum.ThresholdType.Binary);
+
+
+
+                VideoPictureBox2.Image = GrayFrame.ToBitmap();
+
                 SplitArray[0] = 0;
                 SplitArray[1] = 0;
                 SplitArray[2] = 0;
@@ -283,7 +295,7 @@ namespace WinFormsApp2
 
 
 
-                VideoPictureBox2.Image = mergedImage.ToBitmap(); //Set image with added lines
+                VideoPictureBox3.Image = mergedImage.ToBitmap(); //Set image with added lines
 
                 int largestsection = 0;
                 for (int i = 0; i < Sections; i++)
@@ -420,6 +432,78 @@ namespace WinFormsApp2
         private void label11_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void hMinBar_Scroll(object sender, EventArgs e)
+        {
+            if (hMaxBar.Value < hMinBar.Value)
+            {
+
+                hMaxBar.Value = hMinBar.Value;
+            }
+
+            hMin = hMinBar.Value;
+            hMax = hMaxBar.Value;
+        }
+
+        private void hMaxBar_Scroll(object sender, EventArgs e)
+        {
+            if (hMinBar.Value > hMaxBar.Value)
+            {
+                hMinBar.Value = hMaxBar.Value;
+
+            }
+
+            hMin = hMinBar.Value;
+            hMax = hMaxBar.Value;
+        }
+
+        private void sMinBar_Scroll(object sender, EventArgs e)
+        {
+            if (sMaxBar.Value < sMinBar.Value)
+            {
+
+                sMaxBar.Value = sMinBar.Value;
+            }
+
+            sMin = sMinBar.Value;
+            sMax = sMaxBar.Value;
+        }
+
+        private void sMaxBar_Scroll(object sender, EventArgs e)
+        {
+            if (sMinBar.Value > sMaxBar.Value)
+            {
+
+                sMinBar.Value = sMaxBar.Value;
+            }
+
+            sMin = sMinBar.Value;
+            sMax = sMaxBar.Value;
+        }
+
+        private void vMinBar_Scroll(object sender, EventArgs e)
+        {
+            if (vMaxBar.Value < vMinBar.Value)
+            {
+                vMaxBar.Value = vMinBar.Value;
+
+            }
+
+            vMin = vMinBar.Value;
+            vMax = vMaxBar.Value;
+        }
+
+        private void vMaxBar_Scroll(object sender, EventArgs e)
+        {
+            if (vMinBar.Value > vMaxBar.Value)
+            {
+
+                vMinBar.Value = vMaxBar.Value;
+            }
+
+            vMin = vMinBar.Value;
+            vMax = vMaxBar.Value;
         }
     }
 
