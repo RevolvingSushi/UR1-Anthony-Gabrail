@@ -75,6 +75,20 @@
             SatMinBox = new TextBox();
             ValMaxBox = new TextBox();
             ValMinBox = new TextBox();
+            SerialBox = new TextBox();
+            motoronbutton = new Button();
+            label17 = new Label();
+            label18 = new Label();
+            label19 = new Label();
+            label20 = new Label();
+            vPictureBox2 = new PictureBox();
+            label23 = new Label();
+            sPictureBox2 = new PictureBox();
+            label26 = new Label();
+            hPictureBox2 = new PictureBox();
+            VideoPictureBox4 = new PictureBox();
+            textBox2 = new TextBox();
+            RedPixelsTextBox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)VideoPictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VideoPictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ThresholdBarMin).BeginInit();
@@ -89,11 +103,15 @@
             ((System.ComponentModel.ISupportInitialize)vMaxBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)vMinBar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)VideoPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)vPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)sPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)hPictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)VideoPictureBox4).BeginInit();
             SuspendLayout();
             // 
             // StartStopBtn
             // 
-            StartStopBtn.Location = new Point(39, 1622);
+            StartStopBtn.Location = new Point(30, 1550);
             StartStopBtn.Name = "StartStopBtn";
             StartStopBtn.Size = new Size(188, 58);
             StartStopBtn.TabIndex = 0;
@@ -123,7 +141,7 @@
             // 
             // ThresholdBarMin
             // 
-            ThresholdBarMin.Location = new Point(571, 842);
+            ThresholdBarMin.Location = new Point(138, 678);
             ThresholdBarMin.Maximum = 255;
             ThresholdBarMin.Minimum = 100;
             ThresholdBarMin.Name = "ThresholdBarMin";
@@ -141,7 +159,7 @@
             // 
             // ThresholdBarMax
             // 
-            ThresholdBarMax.Location = new Point(571, 962);
+            ThresholdBarMax.Location = new Point(138, 798);
             ThresholdBarMax.Maximum = 255;
             ThresholdBarMax.Minimum = 100;
             ThresholdBarMax.Name = "ThresholdBarMax";
@@ -253,7 +271,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(445, 962);
+            label5.Location = new Point(12, 798);
             label5.Name = "label5";
             label5.Size = new Size(74, 41);
             label5.TabIndex = 19;
@@ -262,7 +280,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(450, 842);
+            label6.Location = new Point(17, 678);
             label6.Name = "label6";
             label6.Size = new Size(69, 41);
             label6.TabIndex = 20;
@@ -271,7 +289,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(550, 1447);
+            label7.Location = new Point(627, 1019);
             label7.Name = "label7";
             label7.Size = new Size(69, 41);
             label7.TabIndex = 24;
@@ -280,7 +298,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(545, 1567);
+            label8.Location = new Point(622, 1139);
             label8.Name = "label8";
             label8.Size = new Size(74, 41);
             label8.TabIndex = 23;
@@ -288,27 +306,28 @@
             // 
             // hMaxBar
             // 
-            hMaxBar.Location = new Point(671, 1567);
+            hMaxBar.Location = new Point(748, 1139);
             hMaxBar.Maximum = 179;
             hMaxBar.Name = "hMaxBar";
-            hMaxBar.Size = new Size(200, 114);
+            hMaxBar.Size = new Size(130, 114);
             hMaxBar.TabIndex = 22;
             hMaxBar.Value = 179;
             hMaxBar.Scroll += hMaxBar_Scroll;
             // 
             // hMinBar
             // 
-            hMinBar.Location = new Point(671, 1447);
+            hMinBar.Location = new Point(748, 1019);
             hMinBar.Maximum = 179;
             hMinBar.Name = "hMinBar";
-            hMinBar.Size = new Size(200, 114);
+            hMinBar.Size = new Size(130, 114);
             hMinBar.TabIndex = 21;
+            hMinBar.Value = 139;
             hMinBar.Scroll += hMinBar_Scroll;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(2137, 1207);
+            label9.Location = new Point(120, 544);
             label9.Name = "label9";
             label9.Size = new Size(210, 41);
             label9.TabIndex = 25;
@@ -321,7 +340,7 @@
             ActionBox.BackColor = Color.CornflowerBlue;
             ActionBox.Font = new Font("Segoe UI", 15.9000006F, FontStyle.Regular, GraphicsUnit.Point);
             ActionBox.ForeColor = SystemColors.ButtonFace;
-            ActionBox.Location = new Point(2107, 1248);
+            ActionBox.Location = new Point(90, 585);
             ActionBox.Name = "ActionBox";
             ActionBox.Size = new Size(272, 72);
             ActionBox.TabIndex = 26;
@@ -331,16 +350,16 @@
             // hPictureBox
             // 
             hPictureBox.BackColor = SystemColors.ControlLight;
-            hPictureBox.Location = new Point(546, 1125);
+            hPictureBox.Location = new Point(623, 697);
             hPictureBox.Name = "hPictureBox";
-            hPictureBox.Size = new Size(450, 300);
+            hPictureBox.Size = new Size(380, 238);
             hPictureBox.TabIndex = 27;
             hPictureBox.TabStop = false;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(728, 1065);
+            label10.Location = new Point(805, 637);
             label10.Name = "label10";
             label10.Size = new Size(72, 41);
             label10.TabIndex = 28;
@@ -350,7 +369,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(1210, 1065);
+            label11.Location = new Point(1206, 637);
             label11.Name = "label11";
             label11.Size = new Size(153, 41);
             label11.TabIndex = 34;
@@ -360,16 +379,16 @@
             // sPictureBox
             // 
             sPictureBox.BackColor = SystemColors.ControlLight;
-            sPictureBox.Location = new Point(1028, 1125);
+            sPictureBox.Location = new Point(1105, 697);
             sPictureBox.Name = "sPictureBox";
-            sPictureBox.Size = new Size(450, 300);
+            sPictureBox.Size = new Size(380, 238);
             sPictureBox.TabIndex = 33;
             sPictureBox.TabStop = false;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(1042, 1447);
+            label12.Location = new Point(1119, 1019);
             label12.Name = "label12";
             label12.Size = new Size(69, 41);
             label12.TabIndex = 32;
@@ -378,7 +397,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(1037, 1567);
+            label13.Location = new Point(1114, 1139);
             label13.Name = "label13";
             label13.Size = new Size(74, 41);
             label13.TabIndex = 31;
@@ -386,28 +405,28 @@
             // 
             // sMaxBar
             // 
-            sMaxBar.Location = new Point(1163, 1567);
+            sMaxBar.Location = new Point(1240, 1139);
             sMaxBar.Maximum = 255;
             sMaxBar.Name = "sMaxBar";
-            sMaxBar.Size = new Size(200, 114);
+            sMaxBar.Size = new Size(130, 114);
             sMaxBar.TabIndex = 30;
             sMaxBar.Value = 255;
             sMaxBar.Scroll += sMaxBar_Scroll;
             // 
             // sMinBar
             // 
-            sMinBar.Location = new Point(1163, 1447);
+            sMinBar.Location = new Point(1240, 1019);
             sMinBar.Maximum = 255;
             sMinBar.Name = "sMinBar";
-            sMinBar.Size = new Size(200, 114);
+            sMinBar.Size = new Size(130, 114);
             sMinBar.TabIndex = 29;
-            sMinBar.Value = 150;
+            sMinBar.Value = 200;
             sMinBar.Scroll += sMinBar_Scroll;
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(1699, 1065);
+            label14.Location = new Point(1715, 637);
             label14.Name = "label14";
             label14.Size = new Size(90, 41);
             label14.TabIndex = 40;
@@ -416,16 +435,16 @@
             // vPictureBox
             // 
             vPictureBox.BackColor = SystemColors.ControlLight;
-            vPictureBox.Location = new Point(1517, 1125);
+            vPictureBox.Location = new Point(1594, 697);
             vPictureBox.Name = "vPictureBox";
-            vPictureBox.Size = new Size(450, 300);
+            vPictureBox.Size = new Size(380, 238);
             vPictureBox.TabIndex = 39;
             vPictureBox.TabStop = false;
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(1517, 1447);
+            label15.Location = new Point(1594, 1019);
             label15.Name = "label15";
             label15.Size = new Size(69, 41);
             label15.TabIndex = 38;
@@ -434,7 +453,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(1512, 1567);
+            label16.Location = new Point(1589, 1139);
             label16.Name = "label16";
             label16.Size = new Size(74, 41);
             label16.TabIndex = 37;
@@ -442,21 +461,22 @@
             // 
             // vMaxBar
             // 
-            vMaxBar.Location = new Point(1638, 1567);
+            vMaxBar.Location = new Point(1715, 1139);
             vMaxBar.Maximum = 255;
             vMaxBar.Name = "vMaxBar";
-            vMaxBar.Size = new Size(200, 114);
+            vMaxBar.Size = new Size(130, 114);
             vMaxBar.TabIndex = 36;
             vMaxBar.Value = 255;
             vMaxBar.Scroll += vMaxBar_Scroll;
             // 
             // vMinBar
             // 
-            vMinBar.Location = new Point(1638, 1447);
+            vMinBar.Location = new Point(1715, 1019);
             vMinBar.Maximum = 255;
             vMinBar.Name = "vMinBar";
-            vMinBar.Size = new Size(200, 114);
+            vMinBar.Size = new Size(130, 114);
             vMinBar.TabIndex = 35;
+            vMinBar.Value = 128;
             vMinBar.Scroll += vMinBar_Scroll;
             // 
             // VideoPictureBox2
@@ -470,51 +490,189 @@
             // 
             // HueMinBox
             // 
-            HueMinBox.Location = new Point(877, 1447);
+            HueMinBox.Location = new Point(901, 1019);
             HueMinBox.Name = "HueMinBox";
-            HueMinBox.Size = new Size(119, 47);
+            HueMinBox.Size = new Size(161, 47);
             HueMinBox.TabIndex = 42;
             // 
             // HueMaxBox
             // 
-            HueMaxBox.Location = new Point(877, 1564);
+            HueMaxBox.Location = new Point(901, 1136);
             HueMaxBox.Name = "HueMaxBox";
-            HueMaxBox.Size = new Size(119, 47);
+            HueMaxBox.Size = new Size(161, 47);
             HueMaxBox.TabIndex = 43;
             // 
             // SatMaxBox
             // 
-            SatMaxBox.Location = new Point(1369, 1567);
+            SatMaxBox.Location = new Point(1393, 1139);
             SatMaxBox.Name = "SatMaxBox";
-            SatMaxBox.Size = new Size(119, 47);
+            SatMaxBox.Size = new Size(161, 47);
             SatMaxBox.TabIndex = 45;
             // 
             // SatMinBox
             // 
-            SatMinBox.Location = new Point(1369, 1450);
+            SatMinBox.Location = new Point(1393, 1022);
             SatMinBox.Name = "SatMinBox";
-            SatMinBox.Size = new Size(119, 47);
+            SatMinBox.Size = new Size(161, 47);
             SatMinBox.TabIndex = 44;
             // 
             // ValMaxBox
             // 
-            ValMaxBox.Location = new Point(1844, 1567);
+            ValMaxBox.Location = new Point(1868, 1139);
             ValMaxBox.Name = "ValMaxBox";
-            ValMaxBox.Size = new Size(119, 47);
+            ValMaxBox.Size = new Size(161, 47);
             ValMaxBox.TabIndex = 47;
             // 
             // ValMinBox
             // 
-            ValMinBox.Location = new Point(1844, 1450);
+            ValMinBox.Location = new Point(1868, 1022);
             ValMinBox.Name = "ValMinBox";
-            ValMinBox.Size = new Size(119, 47);
+            ValMinBox.Size = new Size(161, 47);
             ValMinBox.TabIndex = 46;
+            // 
+            // SerialBox
+            // 
+            SerialBox.Location = new Point(30, 1204);
+            SerialBox.Name = "SerialBox";
+            SerialBox.Size = new Size(286, 47);
+            SerialBox.TabIndex = 48;
+            // 
+            // motoronbutton
+            // 
+            motoronbutton.Location = new Point(30, 1459);
+            motoronbutton.Name = "motoronbutton";
+            motoronbutton.Size = new Size(188, 58);
+            motoronbutton.TabIndex = 49;
+            motoronbutton.Text = "False";
+            motoronbutton.UseVisualStyleBackColor = true;
+            motoronbutton.Click += motoronbutton_Click;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(68, 1402);
+            label17.Name = "label17";
+            label17.Size = new Size(114, 41);
+            label17.TabIndex = 50;
+            label17.Text = "Motors";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(622, 616);
+            label18.Name = "label18";
+            label18.Size = new Size(102, 41);
+            label18.TabIndex = 51;
+            label18.Text = "Yellow";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(570, 1073);
+            label19.Name = "label19";
+            label19.Size = new Size(102, 41);
+            label19.TabIndex = 76;
+            label19.Text = "Yellow";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(1663, 1094);
+            label20.Name = "label20";
+            label20.Size = new Size(90, 41);
+            label20.TabIndex = 69;
+            label20.Text = "Value";
+            // 
+            // vPictureBox2
+            // 
+            vPictureBox2.BackColor = SystemColors.ControlLight;
+            vPictureBox2.Location = new Point(1542, 1229);
+            vPictureBox2.Name = "vPictureBox2";
+            vPictureBox2.Size = new Size(303, 163);
+            vPictureBox2.TabIndex = 68;
+            vPictureBox2.TabStop = false;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(1154, 1094);
+            label23.Name = "label23";
+            label23.Size = new Size(153, 41);
+            label23.TabIndex = 63;
+            label23.Text = "Saturation";
+            // 
+            // sPictureBox2
+            // 
+            sPictureBox2.BackColor = SystemColors.ControlLight;
+            sPictureBox2.Location = new Point(1053, 1229);
+            sPictureBox2.Name = "sPictureBox2";
+            sPictureBox2.Size = new Size(303, 163);
+            sPictureBox2.TabIndex = 62;
+            sPictureBox2.TabStop = false;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(753, 1094);
+            label26.Name = "label26";
+            label26.Size = new Size(72, 41);
+            label26.TabIndex = 57;
+            label26.Text = "Hue";
+            // 
+            // hPictureBox2
+            // 
+            hPictureBox2.BackColor = SystemColors.ControlLight;
+            hPictureBox2.Location = new Point(571, 1229);
+            hPictureBox2.Name = "hPictureBox2";
+            hPictureBox2.Size = new Size(303, 163);
+            hPictureBox2.TabIndex = 56;
+            hPictureBox2.TabStop = false;
+            // 
+            // VideoPictureBox4
+            // 
+            VideoPictureBox4.BackColor = SystemColors.ControlDark;
+            VideoPictureBox4.Location = new Point(1969, 1229);
+            VideoPictureBox4.Name = "VideoPictureBox4";
+            VideoPictureBox4.Size = new Size(282, 163);
+            VideoPictureBox4.TabIndex = 77;
+            VideoPictureBox4.TabStop = false;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(1969, 1426);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(286, 47);
+            textBox2.TabIndex = 79;
+            textBox2.Text = "Red Pixels";
+            textBox2.TextChanged += textBox2_TextChanged;
+            // 
+            // RedPixelsTextBox
+            // 
+            RedPixelsTextBox.Location = new Point(1969, 1488);
+            RedPixelsTextBox.Name = "RedPixelsTextBox";
+            RedPixelsTextBox.Size = new Size(286, 47);
+            RedPixelsTextBox.TabIndex = 78;
+            RedPixelsTextBox.TextChanged += textBox3_TextChanged;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(2500, 1717);
+            Controls.Add(textBox2);
+            Controls.Add(RedPixelsTextBox);
+            Controls.Add(VideoPictureBox4);
+            Controls.Add(label19);
+            Controls.Add(label20);
+            Controls.Add(vPictureBox2);
+            Controls.Add(label23);
+            Controls.Add(sPictureBox2);
+            Controls.Add(label26);
+            Controls.Add(hPictureBox2);
+            Controls.Add(label18);
+            Controls.Add(label17);
+            Controls.Add(motoronbutton);
+            Controls.Add(SerialBox);
             Controls.Add(ValMaxBox);
             Controls.Add(ValMinBox);
             Controls.Add(SatMaxBox);
@@ -579,6 +737,10 @@
             ((System.ComponentModel.ISupportInitialize)vMaxBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)vMinBar).EndInit();
             ((System.ComponentModel.ISupportInitialize)VideoPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)vPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)sPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)hPictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)VideoPictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -632,5 +794,19 @@
         private TextBox SatMinBox;
         private TextBox ValMaxBox;
         private TextBox ValMinBox;
+        private TextBox SerialBox;
+        private Button motoronbutton;
+        private Label label17;
+        private Label label18;
+        private Label label19;
+        private Label label20;
+        private PictureBox vPictureBox2;
+        private Label label23;
+        private PictureBox sPictureBox2;
+        private Label label26;
+        private PictureBox hPictureBox2;
+        private PictureBox VideoPictureBox4;
+        private TextBox textBox2;
+        private TextBox RedPixelsTextBox;
     }
 }

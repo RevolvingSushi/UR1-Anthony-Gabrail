@@ -51,6 +51,10 @@
             "Emgu.CV.runtime.windows": {
               "target": "Package",
               "version": "[4.8.1.5350, )"
+            },
+            "System.IO.Ports": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
